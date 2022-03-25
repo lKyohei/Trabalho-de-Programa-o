@@ -28,18 +28,18 @@ int main (void) {
 	
 	/*variáveis do 2º minigame*/
 	
-	int cont = 1, num, num_pc = 4;
+	int cont = 1, num, num_pc = 4; // num_pc numero ao qual o computador está pensando
 	
 	/*variáveis do 3º minigame*/
 	
-	int dadoA, dadoB;
-	dadoA = rand();
-	dadoB = rand();
-	int score_user_1 = 0, score_user_2 = 0;
-	int cont2 = 1;
-	int result1 = 0, result1_turn, result2 = 0, result2_turn;
+	int dadoA, dadoB; // variaveis dos dados
+	dadoA = rand();// variaveis que vão ser randomizadas a cada turno
+	dadoB = rand();// variaveis que vão ser randomizadas a cada turno
+	int score_user_1 = 0, score_user_2 = 0; //variavel que acumula a pontuação de cada jogador
+	int cont2 = 1;// variavel validadora que serve para saber se o jogador quer continuar jogando ou não
+	int result1 = 0, result1_turn, result2 = 0, result2_turn; // result1 e result 2 variavel pra saber qual a pontuaçao total do jogador na vez dele // result1_turn e result2_turn variavel que acumula a pontuação do jogador no turno dele
 	int result_final_1, result_final_2;
-	int acumulative_turn_1 = 0, acumulative_turn_2 = 0;
+	int acumulative_turn_1 = 0, acumulative_turn_2 = 0; // variavel que registra a pontuação total ao longo do jogo de cada jogador
 	int acumulative_turn_resist1 = 0, acumulative_turn_resist2 = 0;
 	int var_aux1, var_aux2;
 	
@@ -49,7 +49,7 @@ int main (void) {
 	
 	int validador = 1;
 	
-	while (validador > 0 && validador < 6) {
+	while (validador > 0 && validador < 6) {  //while responsavel pelo loop de todos os 3 jogos 
 		
 		printf("Insira o digito correto para entrar no Minigame ou digite 4 para sair:\n");
 		printf("1 - Pergunta e resposta.\n");
@@ -59,7 +59,7 @@ int main (void) {
 		scanf("%d", &validador);
 		printf("\n");
 		
-		switch (validador) {
+		switch (validador) { //
             case 1:
             	
             	while (validador == 1) {
@@ -181,9 +181,9 @@ int main (void) {
                 
                 break;
                 
-            case 3:
+            case 3: //case 3 responsavel pelo 3 jogo
             	
-                while (validador == 3) {
+                while (validador == 3) { // responsavel pelo loop do terceiro jogo
                 	
                 	printf("A ideia desse minigame é que dois jogadores irão competir pra ver quem atingi 50 pontos primeiro.\n");
             		printf("Obs1: a pontuação será decidica no jogar de 2 dados...\n");
@@ -194,12 +194,12 @@ int main (void) {
             		printf("Obs4: caso não deseje jogar os dados novamente você poderá encerrar seu turno e consequentemente voc~e irá preserva sua pontuação...\n");
             		printf("\n");
                 	
-                	while (score_user_1 < 50 && score_user_2 < 50) {
+                	while (score_user_1 < 50 && score_user_2 < 50) { // define que ambos os jogadores precisam de 50 pontos ou mais para que exista um vencedor
                 		
                 		dadoA = rand();
 						dadoB = rand();
                 		
-                		while (cont2 == 1) {
+                		while (cont2 == 1) { //serve para que o caso o usuario digite 1 ao final do seu turno ele jogue novamente
                 			
                 			dadoA = rand();
 							dadoB = rand();
@@ -207,7 +207,7 @@ int main (void) {
                 			printf("Este é o turno do jogador 1!\n");
                 			printf("\n");
                 			
-                			srand((unsigned)time(NULL));
+                			srand((unsigned)time(NULL));//funcao srand utilizada para gerar os numeros aleatorios dos dados
 							dadoA = dadoA%6 + 1, dadoB = dadoB%6 + 1;
 							result1_turn = dadoA + dadoB;
 							printf("A soma dos valores dos seus dados é: %i + %i = %i\n", dadoA, dadoB, result1_turn, ".\n");
@@ -220,7 +220,7 @@ int main (void) {
 							scanf("%i", &cont2);
 							printf("\n");
 							
-							while (cont2 == 1) {
+							while (cont2 == 1) { // esse while e para caso o jogador jogue novamente e tire 1 em cada um de seus dados e seja aplicada as punições
 								
 								dadoA = rand();
 								dadoB = rand();
@@ -232,7 +232,7 @@ int main (void) {
 								acumulative_turn_1 = result1_turn + var_aux1 + acumulative_turn_1;
 								acumulative_turn_resist1 = result1_turn + var_aux1 + acumulative_turn_resist1;
 								
-								if (cont2 == 1 && dadoA == 1 && dadoB != 1) {
+								if (cont2 == 1 && dadoA == 1 && dadoB != 1) {//else if para caso o jogador tire 1 + algum outro numero entre 1 e 6
 									result1 = result1 - acumulative_turn_resist1 + var_aux1;
 									printf("Os valores dos seus dados foram: %i + %i\n", dadoA, dadoB, ".\n");
 									printf("\n");
@@ -246,7 +246,7 @@ int main (void) {
 									cont2 = 0;
 								
 								}
-								else if (cont2 == 1 && dadoA != 1 && dadoB == 1) {
+								else if (cont2 == 1 && dadoA != 1 && dadoB == 1) {//else if para caso o jogador tire algum outro numero entre 1 e 6 + 1
 									result1 = result1 - acumulative_turn_resist1 + var_aux1;
 									printf("Os valores dos seus dados foram: %i + %i\n", dadoA, dadoB, ".\n");
 									printf("\n");
@@ -260,7 +260,7 @@ int main (void) {
 									cont2 = 0;
 									
 								}
-								else if (cont2 == 1 && dadoA == 1 && dadoB == 1) {
+								else if (cont2 == 1 && dadoA == 1 && dadoB == 1) { // else if para caso o jogador ire 1+1 e perca toda a sua pontuação e sua vez
 									printf("Os valores dos seus dados foram: %i + %i\n", dadoA, dadoB, ".\n");
 									printf("Infelizmente os seus 2 dados caíram no número 1 e você perdeu toda sua pontuação.\n");
 									printf("\n");
@@ -270,7 +270,7 @@ int main (void) {
 									
 									cont2 = 0;
 								}
-								else if (cont2 == 1 && dadoA != 1 && dadoB != 1) {
+								else if (cont2 == 1 && dadoA != 1 && dadoB != 1) { // else if para caso o jogador tire numeros diferente de 1 e possar seguir jogando normalmente
 									printf("A soma dos valores dos seus dados é: %i + %i = %i\n", dadoA, dadoB, var_aux1, ".\n");
 									result1 = acumulative_turn_1 + result1 - result1_turn;
 									printf("Sua pontuação total atualmente é: %i", result1, ".\n");
