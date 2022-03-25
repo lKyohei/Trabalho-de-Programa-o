@@ -209,7 +209,7 @@ int main (void) {
                 			printf("Este é o turno do jogador 1!\n");
                 			printf("\n");
                 			
-                			srand((unsigned)time(NULL));//funcao srand utilizada para gerar os numeros aleatorios dos dados
+                			srand((unsigned)time(NULL));//funcao srand utilizada para gerar os numeros aleatorios dos dados a partir do resto da divisão n% limitando a quantidade de numeros
 							dadoA = dadoA%6 + 1, dadoB = dadoB%6 + 1;
 							result1_turn = dadoA + dadoB;
 							printf("A soma dos valores dos seus dados é: %i + %i = %i\n", dadoA, dadoB, result1_turn, ".\n");
