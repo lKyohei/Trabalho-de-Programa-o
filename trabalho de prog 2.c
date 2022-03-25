@@ -62,7 +62,7 @@ int main (void) {
 		switch (validador) { //
             case 1:
             	
-            	while (validador == 1) {
+            	while (validador == 1) { // para que o jogador ao digitar 1 tente jogar novamente
             		printf("Esse é um minigame em que você deve inserir a ALTERNATIVA correta ao que se pede na questão.\n");
 	            	printf("Obs: Serão 3 perguntas no total.\n\n");
 	            	
@@ -72,16 +72,16 @@ int main (void) {
 	                scanf("%s", &resposta1);
 	                printf("\n");
 	                
-	                if (strcmp (resposta1, "a") == 0) {
+	                if (strcmp (resposta1, "a") == 0) { //if para caso o jogador acerte a resposta
 	                	
 	                    printf("Resposta Correta!\n");
 	                    printf("Sua reposta: %s", &a1, ".");
 	                    printf("\n");
 	                    printf("\n");
 	                }
-					else {
+					else {// else para caso o jogador erre a resposta
 	                	
-	                    printf("Resposta Incorreta!\n");
+	                    printf("Resposta Incorreta!\n"); 
 	                    printf("A respota correta era: %s", &a1, ".");
 	                    printf("\n");
 	                    printf("\n");
@@ -138,7 +138,7 @@ int main (void) {
                 
             case 2:
             	
-            	while (validador == 2) {
+            	while (validador == 2) { // para o jogador tentar novamente ao digitar 2
             		
             		cont = 1;
             		
@@ -146,7 +146,7 @@ int main (void) {
             		printf("Obs: você terá apenas 5 chances para tentar adivinhar...\n");
             		printf("\n");
             		
-            		while (cont <= 5 && num != num_pc) {
+            		while (cont <= 5 && num != num_pc) { //while que define a quantidade de chances para o jogador
             			
             			printf("Computador --> por favor digite um número:\n");
 						scanf("%d", &num);
@@ -184,7 +184,7 @@ int main (void) {
                 
             case 3: //case 3 responsavel pelo 3 jogo
             	
-                while (validador == 3) { // responsavel pelo loop do terceiro jogo
+                while (validador == 3) { // responsavel para que o jogador queira jogar novamente ao digitar 3
                 	
                 	printf("A ideia desse minigame é que dois jogadores irão competir pra ver quem atingi 50 pontos primeiro.\n");
             		printf("Obs1: a pontuação será decidica no jogar de 2 dados...\n");
