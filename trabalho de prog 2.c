@@ -177,6 +177,7 @@ int main (void) {
 					printf("Caso deseje continuar jogando o minigame digite 2, senão digite 5 para voltar ao menu.\n");
 					scanf("%d", &validador);
 					printf("\n");
+					num =0;
 				}
                 
                 break;
