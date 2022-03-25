@@ -11,7 +11,7 @@ int main (void) {
 	/*variáveis do 1º minigame*/
 	
 	char a1[50] = "a) 2";
-	char b1[50] = "b) 3";
+	char b1[50] = "b) 4";
 	char c1[50] = "c) 10";
 	
 	char a2[50] = "a) 0";
