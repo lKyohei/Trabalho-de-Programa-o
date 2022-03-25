@@ -39,9 +39,10 @@ int main (void) {
 	int cont2 = 1;// variavel validadora que serve para saber se o jogador quer continuar jogando ou não
 	int result1 = 0, result1_turn, result2 = 0, result2_turn; // result1 e result 2 variavel pra saber qual a pontuaçao total do jogador na vez dele // result1_turn e result2_turn variavel que acumula a pontuação do jogador no turno dele
 	int result_final_1, result_final_2;
-	int acumulative_turn_1 = 0, acumulative_turn_2 = 0; // variavel que registra a pontuação total ao longo do jogo de cada jogador
-	int acumulative_turn_resist1 = 0, acumulative_turn_resist2 = 0;
+	int acumulative_turn_1 = 0, acumulative_turn_2 = 0; // variavel que acumula a pontuação que o jogador faz a cada jogada de risco
+	int acumulative_turn_resist1 = 0, acumulative_turn_resist2 = 0; //essa acumula a pontuação de todas as jogadas de risco ao longo do jogo, resetando sempre que o jogador para de jogar
 	int var_aux1, var_aux2;
+	//ambos os acumulative recebem na primeira jogada de risco o valor do result_turn mas so na primeira jogada de risco apos isso o result_turn reseta
 	
 	/*------------------------*/
 	
