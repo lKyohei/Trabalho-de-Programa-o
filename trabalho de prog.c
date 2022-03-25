@@ -146,7 +146,7 @@ int main (void) {
             		printf("Obs: você terá apenas 5 chances para tentar adivinhar...\n");
             		printf("\n");
             		
-            		while (cont <= 5 && num != num_pc) { //while que define a quantidade de chances para o jogador
+            		while (cont <= 5 && num != num_pc) { //serve para que o laço de repetição continue rodando enquanto as condições forem cumpridas, numero de 5 chances ou numero diferente do que o pc esteja "pensando"
             			
             			printf("Computador --> por favor digite um número:\n");
 						scanf("%d", &num);
